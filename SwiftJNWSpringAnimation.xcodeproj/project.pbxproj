@@ -13,6 +13,8 @@
 		94235C831B9DC54B0006434F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94235C821B9DC54B0006434F /* Images.xcassets */; };
 		94235C861B9DC54B0006434F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94235C841B9DC54B0006434F /* LaunchScreen.xib */; };
 		94235C921B9DC54B0006434F /* SwiftJNWSpringAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94235C911B9DC54B0006434F /* SwiftJNWSpringAnimationTests.swift */; };
+		94235C9F1B9DC87A0006434F /* JNWSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 94235C9E1B9DC87A0006434F /* JNWSpringAnimation.m */; };
+		94235CA21B9DC8950006434F /* NSValue+JNWAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 94235CA11B9DC8950006434F /* NSValue+JNWAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,11 @@
 		94235C8B1B9DC54B0006434F /* SwiftJNWSpringAnimationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftJNWSpringAnimationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94235C901B9DC54B0006434F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94235C911B9DC54B0006434F /* SwiftJNWSpringAnimationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftJNWSpringAnimationTests.swift; sourceTree = "<group>"; };
+		94235C9C1B9DC87A0006434F /* SwiftJNWSpringAnimation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftJNWSpringAnimation-Bridging-Header.h"; sourceTree = "<group>"; };
+		94235C9D1B9DC87A0006434F /* JNWSpringAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNWSpringAnimation.h; sourceTree = "<group>"; };
+		94235C9E1B9DC87A0006434F /* JNWSpringAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNWSpringAnimation.m; sourceTree = "<group>"; };
+		94235CA01B9DC8950006434F /* NSValue+JNWAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+JNWAdditions.h"; sourceTree = "<group>"; };
+		94235CA11B9DC8950006434F /* NSValue+JNWAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+JNWAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +84,7 @@
 		94235C781B9DC54B0006434F /* SwiftJNWSpringAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				94235C9B1B9DC80F0006434F /* JNWSpringAnimation */,
 				94235C7B1B9DC54B0006434F /* AppDelegate.swift */,
 				94235C7D1B9DC54B0006434F /* ViewController.swift */,
 				94235C7F1B9DC54B0006434F /* Main.storyboard */,
@@ -110,6 +118,18 @@
 				94235C901B9DC54B0006434F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		94235C9B1B9DC80F0006434F /* JNWSpringAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				94235CA01B9DC8950006434F /* NSValue+JNWAdditions.h */,
+				94235CA11B9DC8950006434F /* NSValue+JNWAdditions.m */,
+				94235C9D1B9DC87A0006434F /* JNWSpringAnimation.h */,
+				94235C9E1B9DC87A0006434F /* JNWSpringAnimation.m */,
+				94235C9C1B9DC87A0006434F /* SwiftJNWSpringAnimation-Bridging-Header.h */,
+			);
+			name = JNWSpringAnimation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +232,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94235CA21B9DC8950006434F /* NSValue+JNWAdditions.m in Sources */,
 				94235C7E1B9DC54B0006434F /* ViewController.swift in Sources */,
+				94235C9F1B9DC87A0006434F /* JNWSpringAnimation.m in Sources */,
 				94235C7C1B9DC54B0006434F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,9 +362,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SwiftJNWSpringAnimation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftJNWSpringAnimation/SwiftJNWSpringAnimation-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -350,9 +375,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SwiftJNWSpringAnimation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftJNWSpringAnimation/SwiftJNWSpringAnimation-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -409,6 +436,7 @@
 				94235C971B9DC54B0006434F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		94235C981B9DC54B0006434F /* Build configuration list for PBXNativeTarget "SwiftJNWSpringAnimationTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +445,7 @@
 				94235C9A1B9DC54B0006434F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
